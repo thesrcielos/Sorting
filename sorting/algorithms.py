@@ -14,15 +14,22 @@ def selection_sort(list):
 def quick_sort(list):
     if len(list) < 2:
         return list
-    pivot = list[0]
+    size = len(list)
+    pivot = list[size //2]
     smaller = []
     greater = []
-    for i in range(1, len(list)):
+    for i in range(size//2):
         if pivot >= list[i]:
             smaller.append(list[i])
         else:
             greater.append(list[i])
     
+    for i in range(size//2 + 1, size):
+        if pivot >= list[i]:
+            smaller.append(list[i])
+        else:
+            greater.append(list[i])
+
     return quick_sort(smaller) + [pivot] + quick_sort(greater)
 
 def heap_sort(list):
