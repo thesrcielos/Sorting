@@ -1,5 +1,5 @@
 import random
-from twistedsort import constants
+from sorting import constants
 
 
 def get_random_list(size, limit=constants.MAX_VALUE):

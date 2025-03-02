@@ -1,8 +1,8 @@
 import time
 
-from twistedsort import algorithms
-from twistedsort import constants
-from twistedsort import data_generator
+from sorting import algorithms
+from sorting import constants
+from sorting import data_generator
 
 
 def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
@@ -28,9 +28,9 @@ def take_times(size, samples_by_size):
         samples.append(data_generator.get_random_list(size))
 
     return [
-        take_time_for_algorithm(samples, algorithms.split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.no_split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.full_sort_and_iterate_approach),
+        take_time_for_algorithm(samples, algorithms.selection_sort),
+        take_time_for_algorithm(samples, algorithms.quick_sort),
+        take_time_for_algorithm(samples, algorithms.heap_sort),
     ]
 
 
