@@ -10,7 +10,7 @@ def selection_sort(list):
         list[i], list[min_element] = list[min_element], list[i]
     
     return list
-
+"""
 def quick_sort(list):
     if len(list) < 2:
         return list
@@ -31,7 +31,35 @@ def quick_sort(list):
             greater.append(list[i])
 
     return quick_sort(smaller) + [pivot] + quick_sort(greater)
+"""
+def quick_sort(arr):
+    sort(arr, 0, len(arr) - 1)
+    return arr
 
+def sort(arr, low, high):
+    if low < high:
+        pivot_index = partition(arr, low, high)
+        sort(arr, low, pivot_index) 
+        sort(arr, pivot_index + 1, high)  
+
+def partition(arr, low, high):
+    pivot = arr[(low + high) // 2]  
+    left = low - 1
+    right = high + 1
+
+    while True:
+        left += 1
+        while arr[left] < pivot:
+            left += 1
+
+        right -= 1
+        while arr[right] > pivot:
+            right -= 1
+
+        if left >= right:
+            return right  
+
+        arr[left], arr[right] = arr[right], arr[left]
 def heap_sort(list):
     heapq.heapify(list)  
     sorted_list = []

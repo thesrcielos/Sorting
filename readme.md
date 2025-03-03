@@ -2,31 +2,17 @@
 
 Simple python project to show a way to take experiental execution time to compare a set of algorithms (three in this case) in fair way.
 
-## Twisted Sort
-
-First even then odd sorting algorithms.
+## Sort algorithms
 
 ### Problem statement
 ​
-The sample problem is to take a list of integers with at least one element and sort them with the following criteria:
+The sproblem is sorting a list of integers
 
-* First it will be the even numbers (those who are divisible by 2 with no reminder), then it will be the odd numbers
-* The even numbers should be sorted in ascending order, and the odd numbers should be sorted in descending order
-* The algorithm will only sort positive numbers
-
-### Examples
-
-* For `3 1 9` the output should be `9 3 1`
-
-* For `1 9 8 2 3 4 5 7 6` the output should be `2 4 6 8 9 7 5 3 1`
-
-* For `8 2 4` the output should be `2 4 8`
-
-* For `10 90 80 20 30 40 50 70 60` the output should be `10 20 30 40 50 60 70 80 90`
-
-* For `11 91 81 21 31 41 51 71 61` the output should be `91 81 71 61 51 41 31 21 11`
-
-* For `11 92 83 24 35 46 57 78 69` the output should be `24 46 78 92 83 69 57 35 11`
+| Algorithm        | Best Case        | Average Case      | Worst Case       | Space Complexity |
+|-----------------|-----------------|------------------|------------------|------------------|
+| **Selection Sort** | \( O(n^2) \)    | \( O(n^2) \)      | \( O(n^2) \)      | \( O(1) \)       |
+| **Quick Sort**   | \( O(n log n) \) | \( O(n log n) \) | \( O(n^2) \) (unbalanced) | \( O(\log n) \) (recursive calls) |
+| **Heap Sort**    | \( O(n log n) \) | \( O(n \log n) \) | \( O(n log n) \) | \( O(1) \) (in-place) |
 
 
 
@@ -48,17 +34,17 @@ Python 3.11.0
 Make sure you have "coverage" in your requirements.txt file and run pip install. Then run `coverage run -m unittest discover` and after that run `coverage report` to get the following table:
 
 ```
-Name                            Stmts   Miss  Cover
----------------------------------------------------
-test/__init__.py                    0      0   100%
-test/test_algorithms.py            24      1    96%
-test/test_data_generator.py        29      1    97%
-twistedsort/__init__.py             0      0   100%
-twistedsort/algorithms.py          27      3    89%
-twistedsort/constants.py            2      0   100%
-twistedsort/data_generator.py       9      1    89%
----------------------------------------------------
-TOTAL                              91      6    93%
+Name                          Stmts   Miss  Cover
+-------------------------------------------------
+sorting\__init__.py               0      0   100%
+sorting\algorithms.py            39      0   100%
+sorting\constants.py              2      0   100%
+sorting\data_generator.py         9      1    89%
+test\__init__.py                  0      0   100%
+test\test_algorithms.py          22      1    95%
+test\test_data_generator.py      29      1    97%
+-------------------------------------------------
+TOTAL                           101      3    97%
 ```
 
 # Code beautifier
