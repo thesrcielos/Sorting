@@ -39,27 +39,21 @@ def quick_sort(arr):
 def sort(arr, low, high):
     if low < high:
         pivot_index = partition(arr, low, high)
-        sort(arr, low, pivot_index) 
+        sort(arr, low, pivot_index-1) 
         sort(arr, pivot_index + 1, high)  
 
 def partition(arr, low, high):
-    pivot = arr[(low + high) // 2]  
-    left = low - 1
-    right = high + 1
+    pivot = arr[high]  
+    idx = low
 
-    while True:
-        left += 1
-        while arr[left] < pivot:
-            left += 1
+    for i in range(low, high):
+        if arr[i] <= pivot:
+            arr[idx], arr[i] = arr[i], arr[idx]
+            idx+=1
+    
+    arr[idx], arr[high] = pivot, arr[idx]
+    return idx
 
-        right -= 1
-        while arr[right] > pivot:
-            right -= 1
-
-        if left >= right:
-            return right  
-
-        arr[left], arr[right] = arr[right], arr[left]
 def heap_sort(list):
     heapq.heapify(list)  
     sorted_list = []
