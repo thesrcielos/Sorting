@@ -3,7 +3,7 @@ import time
 from sorting import algorithms
 from sorting import constants
 from sorting import data_generator
-
+import tracemalloc
 
 def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
     return_table = []
@@ -41,11 +41,15 @@ def take_times(size, samples_by_size):
 
 def take_time_for_algorithm(samples_array, sorting_approach):
     times = []
-
+    memory_usage = []
     for sample in samples_array:
+        tracemalloc.start()
         start_time = time.time()
         sorting_approach(sample.copy())
-        times.append(int(constants.TIME_MULTIPLIER * (time.time() - start_time)))
-
+        end_time = time.time()
+        _, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        times.append(int(constants.TIME_MULTIPLIER * (end_time - start_time)))
+        memory_usage.append(peak)
     times.sort()
-    return times[len(times) // 2]
+    return times[len(times) // 2], memory_usage[len(memory_usage) // 2]
