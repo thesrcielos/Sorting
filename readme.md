@@ -48,7 +48,7 @@ Python 3.11.0
 
 ## Comparation Quick sort and Heap Sort
 
-| Size   | Quick Sort (Comparisons, Swaps) | Heap Sort (Comparisons, Swaps) |
+| Size   | Quick Sort (Time, Memory) | Heap Sort (Time, Memory) |
 |--------|---------------------------------|--------------------------------|
 | 100000 | (273221, 2624)                  | (10355, 1082880)               |
 | 150000 | (314937, 2496)                  | (22084, 1576192)               |
