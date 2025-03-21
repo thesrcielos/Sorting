@@ -47,13 +47,15 @@ def take_time_for_algorithm(samples_array, sorting_approach):
     times = []
     memory_usage = []
     for sample in samples_array:
+        copy = sample.copy()
         tracemalloc.start()
         start_time = time.time()
-        sorting_approach(sample.copy())
+        sorting_approach(copy)
         end_time = time.time()
         _, peak = tracemalloc.get_traced_memory()
         tracemalloc.stop()
         times.append(int(constants.TIME_MULTIPLIER * (end_time - start_time)))
         memory_usage.append(peak)
     times.sort()
+    memory_usage.sort()
     return times[len(times) // 2], memory_usage[len(memory_usage) // 2]

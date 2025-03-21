@@ -77,8 +77,8 @@ def graphicsQuickHeap():
     y1 = [row[1][1] for row in table]
     y2 = [row[2][1] for row in table]
 
-    plt.plot(x, y1, label="Selection", color='blue')
-    plt.plot(x, y2, label="Quick", color='green')
+    plt.plot(x, y1, label="Quick", color='blue')
+    plt.plot(x, y2, label="Heap", color='green')
 
     plt.title('Comparation Sorting algorithms Memory Usage')
     plt.xlabel('Size')
