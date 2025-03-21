@@ -41,10 +41,10 @@ Python 3.11.0
 | 4000  | (471701, 284)                      | (5284, 1664)                    | (0, 41184)                     |
 | 5000  | (736796, 284)                      | (7362, 1808)                    | (397, 51904)                   |
 
-!(img/s1.png)
+![](img/s1.png)
 
 
-!(img/m1.png)
+![](img/m1.png)
 
 ## Comparation Quick sort and Heap Sort
 
@@ -61,10 +61,10 @@ Python 3.11.0
 | 500000 | (1174485, 2944)                 | (81960, 5176832)               |
 
 
-!(img/s2.png)
+![](img/s2.png)
 
 
-!(img/m2.png)
+![](img/m2.png)
 
 # Current coverage
 
